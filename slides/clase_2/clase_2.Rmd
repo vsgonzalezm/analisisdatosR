@@ -1,0 +1,512 @@
+---
+title: "R Studio"
+subtitle: "Analisis R studio "
+author: "Valentina González M."
+institute: "Universidad de Santiago "
+date: '`r format(Sys.Date(), "%d-%m-%Y")`'
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+      ratio: 16:9
+      slideNumberFormat: "%current%"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  footnote_font_size = "0.5em",
+  primary_color = "#28282B",
+  #primary_color = "#7393B3",
+  secondary_color = "#2c8475",
+  black_color = "#4242424",
+  white_color = "#FFF",
+  base_font_size = "30px",
+  # text_font_family = "Jost",
+  # text_font_url = "https://indestructibletype.com/fonts/Jost.css",
+  header_font_google = google_font("Libre Franklin", "200", "400"),
+  header_font_weight = "200",
+  inverse_header_color = "#eaeaea",
+  title_slide_text_color = "#FFFFFF",
+  text_slide_number_color = "#9a9a9a",
+  text_bold_color = "#6A5ACD",
+  code_inline_color = "#B56B6F",
+  code_highlight_color = "transparent",
+  link_color = "#2c8475",
+  table_row_even_background_color = lighten_color("#345865", 0.9),
+  extra_fonts = list(
+    "https://indestructibletype.com/fonts/Jost.css",
+    google_font("Amatic SC", "400")
+  ),
+  colors = c(
+    green = "#31b09e",
+    "green-dark" = "#2c8475",
+    highlight = "#87f9bb",
+    purple = "#887ba3",
+    pink = "#B56B6F",
+    orange = "#f79334",
+    red = "#dc322f",
+    `blue-dark` = "#002b36",
+    `text-dark` = "#202020",
+    `text-darkish` = "#424242",
+    `text-mild` = "#606060",
+    `text-light` = "#9a9a9a",
+    `text-lightest` = "#eaeaea"
+  ),
+  extra_css = list(
+    ".remark-slide-content h3" = list(
+      "margin-bottom" = 0, 
+      "margin-top" = 0
+    ),
+    ".smallish, .smallish .remark-code-line" = list(`font-size` = "0.7em")
+  )
+)
+suppressWarnings(xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons", "share_again")))
+suppressWarnings(xaringanExtra::use_extra_styles())
+
+```
+
+```{r metadata, echo=FALSE}
+library(metathis)
+meta() %>% 
+  meta_description("Análisis R Studio") %>% 
+  meta_social(
+    title = "Análisis R Studio",
+    url = "",
+    image = "",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "vgonzalez"
+  )
+```
+
+
+
+```{r components, include=FALSE}
+slides_from_images <- function(
+  path,
+  regexp = NULL,
+  class = "hide-count",
+  background_size = "contain",
+  background_position = "top left"
+) {
+  if (isTRUE(getOption("slide_image_placeholder", FALSE))) {
+    return(glue::glue("Slides to be generated from [{path}]({path})"))
+  }
+  if (fs::is_dir(path)) {
+    imgs <- fs::dir_ls(path, regexp = regexp, type = "file", recurse = FALSE)
+  } else if (all(fs::is_file(path) && fs::file_exists(path))) {
+    imgs <- path
+  } else {
+    stop("path must be a directory or a vector of images")
+  }
+  imgs <- fs::path_rel(imgs, ".")
+  breaks <- rep("\n---\n", length(imgs))
+  breaks[length(breaks)] <- ""
+
+  txt <- glue::glue("
+  class: {class}
+  background-image: url('{imgs}')
+  background-size: {background_size}
+  background-position: {background_position}
+  {breaks}
+  ")
+
+  paste(txt, sep = "", collapse = "")
+}
+options("slide_image_placeholder" = FALSE)
+```
+
+class: left title-slide
+background-image: url('portada.jpg')
+background-size: cover
+background-position: left
+
+[remarkjs]: https://github.com/gnab/remark
+[remark-wiki]: https://github.com/gnab/remark/wiki
+[xaringan]: https://slides.yihui.org/xaringan/
+[xaringan-wiki]: https://github.com/yihui/xaringan/wiki
+[xaringanthemer]: https://pkg.garrickadenbuie.com/xaringanthemer
+[xaringanExtra]: https://pkg.garrickadenbuie.com/xaringanExtra
+[metathis]: https://pkg.garrickadenbuie.com/metathis
+[rsthemes]: https://www.garrickdenbuie.com/projects/rsthemes
+[regexplain]: https://www.garrickdenbuie.com/projects/regexplain
+[shrtcts]: https://pkg.garricakdenbuie.com/shrtcts
+
+
+## **Clase 2 <br> dplyr + Mi primer RMarkdown**
+
+.side-text[
+Valentina González Madariaga <br>
+valentina.gonzalez.mad@usach.cl
+
+]
+
+
+.title-where[
+**Analisis de datos con R studio<br>**
+Universidad de Santiago <br>
+`r format(Sys.Date(), "%d-%m-%Y")`
+]
+
+```{css echo=FALSE}
+.title-slide h1 {
+  font-size: 80px;
+  font-family: Jost, sans;
+  color: #6A5ACD;  /* Cambio del color del texto a morado */
+}
+
+.side-text {
+  color: #6A5ACD;  /* Cambio del color del texto lateral a morado */
+  transform: rotate(90deg);
+  position: absolute;
+  font-size: 22px;
+  top: 150px;
+  right: -130px;
+}
+
+.side-text a {
+  color: #6A5ACD;  /* Cambio del color de los enlaces a morado */
+}
+
+.title-where {
+  font-family: Jost, sans;
+  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  color: #6A5ACD;  /* Cambio del color del texto de ubicación a morado */
+}
+```
+
+
+```{r logo, echo=FALSE}
+library(xaringanExtra)
+use_logo(
+image_url = "logo_usach.png",
+ exclude_class = c("title-slide","hide_logo","inverse"),
+  width = "250px",
+ height = "250px")
+```
+
+
+---
+class:middle
+# Indice 
+- profundizar en dplyr (select, filter, mutate, arrange, summarise, group_by).
+
+- crear nuestro primer informe reproducible con R Markdown (HTML).
+
+- práctica
+---
+class:middle
+# Setup del proyecto
+
+Abre el .Rproj de la clase.
+
+Estructura sugerida:
+
+data/, scripts/, outputs/
+
+Verifica tu working directory y here::here().
+
+getwd()
+here::here()
+dir.create(here::here("outputs"), showWarnings = FALSE)
+---
+class: middle
+
+# Cargar paquetes
+#library(readr)
+#library(dplyr)
+#library(ggplot2)
+#library(here)
+
+
+Si algo falla: install.packages("nombre_paquete") en la consola, no dentro de documentos Rmd.
+---
+class: middle
+
+#Datos 1: UNpop
+
+Población mundial por año (ONU).
+
+Ideal para practicar verbos de dplyr.
+
+UNpop <- readr::read_csv(
+  "https://raw.githubusercontent.com/kosukeimai/qss/master/INTRO/UNpop.csv"
+)
+
+dplyr::glimpse(UNpop)
+
+---
+class: middle
+
+## dplyr · select() y filter()
+UNpop %>%
+  dplyr::select(year, world.pop) %>%
+  dplyr::filter(year >= 1960) %>%
+  head()
+
+
+select(): elige columnas.
+
+filter(): filtra filas por condición.
+
+---
+class: middle
+
+# dplyr · mutate() y arrange()
+UNpop %>%
+  dplyr::mutate(pop_mill = world.pop / 1000) %>%
+  dplyr::arrange(year) %>%
+  dplyr::select(year, pop_mill) %>%
+  head()
+
+
+mutate(): crea o transforma variables.
+
+arrange(): ordena filas.
+
+---
+class: middle
+
+# dplyr · summarise() (+ group_by())
+UNpop %>%
+  dplyr::filter(year >= 1960) %>%
+  dplyr::summarise(
+    media = mean(world.pop, na.rm = TRUE),
+    min   = min(world.pop, na.rm = TRUE),
+    max   = max(world.pop, na.rm = TRUE)
+  )
+
+
+Para grupos: anteponer group_by(grupo) y luego summarise().
+
+---
+class: middle
+
+# Gráfico rápido
+p <- ggplot(UNpop, aes(x = year, y = world.pop)) +
+  geom_line() +
+  labs(
+    title = "Población mundial (ONU)",
+    x = "Año", y = "Población (millones)"
+  ) +
+  theme_minimal()
+
+p
+
+---
+class: middle
+
+# Guardar tu gráfico
+ggsave(
+  filename = here::here("outputs", "unpop_plot.png"),
+  plot = p,
+  width = 8, height = 4, dpi = 150
+)
+
+
+Revisa en outputs/ que el archivo se creó correctamente.
+
+--- 
+class: middle
+
+# R Markdown · ¿qué es?
+
+Documento que mezcla texto, código y resultados.
+
+Exporta a HTML (hoy), PDF o Word.
+
+Nunca pegar números a mano: usa inline R.
+
+--- 
+class: middle
+
+# R Markdown · crear archivo
+
+File → New File → R Markdown…
+
+Completar título/autor → OK
+
+Guardar como Clase2_apellido_nombre.Rmd
+
+Primer Knit a HTML para comprobar.
+
+--- 
+class: middle
+
+# R Markdown · estructura mínima
+
+---
+title: "Mini-informe exploratorio"
+author: "Nombre Apellido"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: html_document
+---
+
+
+YAML es sensible a espacios/indentación.
+
+--- 
+class: middle
+
+# Chunks de R
+```{r }
+library(dplyr); library(ggplot2); library(readr)
+```
+
+```{r}
+summary(cars)
+```
+
+Opciones útiles: echo, eval, include, fig.width, fig.height, warning, message.
+
+--- 
+class: middle
+
+# Inline R
+
+En el texto: “El promedio es r round(mean(x), 2)”.
+
+Ventaja: el valor se actualiza si cambian los datos/código.
+
+--- 
+class: middle
+
+# Buenas prácticas
+
+No poner install.packages() dentro del .Rmd.
+
+Guardar gráficos/archivos en carpetas (outputs/).
+
+Nombres de objetos claros y en minúsculas.
+--- 
+class: middle
+
+# Datos 2: swiss
+
+Pequeño dataset integrado en R.
+
+Ideal para resúmenes y un gráfico simple.
+
+data(swiss)
+str(swiss)
+summary(swiss)
+
+--- 
+class: middle
+
+# Tabla resumida con dplyr
+swiss %>%
+  summarise(
+    across(
+      .cols = everything(),
+      .fns  = ~ mean(.x, na.rm = TRUE)
+    )
+  )
+
+
+Alternativa: summary(swiss) para una tabla rápida.
+--- 
+class: middle
+
+# Gráfico simple: dispersión
+ggplot(swiss, aes(x = Education, y = Infant.Mortality)) +
+  geom_point() +
+  labs(
+    title = "Educación y mortalidad infantil (swiss)",
+    x = "Educación", y = "Mortalidad infantil"
+  ) +
+  theme_minimal()
+
+--- 
+class: middle
+
+#Mini-informe (entregable de clase)
+
+Tu .Rmd debe incluir:
+
+Título y YAML ok
+
+Sección “Datos” (2–3 líneas)
+
+1 tabla (resumen)
+
+1 gráfico
+
+1 inline R (número redondeado)
+
+Exporta HTML y súbelo al repositorio/carpeta.
+--- 
+class: middle
+
+#Checkpoints (en parejas)
+
+Tengo outputs/ y Knit funciona.
+
+Tengo 1 pipeline con ≥3 verbos.
+
+Tengo HTML con tabla + figura + inline.
+--- 
+class: middle
+# Desafíos (si terminas antes)
+
+A) Añade group_by() + summarise()
+B) Exporta un gráfico a outputs/
+C) Repite el análisis con UNpop
+--- 
+class: middle
+
+# Errores frecuentes
+
+YAML mal indentado
+
+Chunk sin cerrar (tres tildes)
+
+Rutas absolutas (usar here::here())
+
+No cargaste paquetes en el Rmd
+--- 
+class: middle
+
+#Cierre (10’)
+
+2–3 grupos muestran su HTML (1 min c/u).
+
+Preguntas y troubleshooting.
+
+Tarea: .Rmd corto con swiss (1 tabla, 1 figura, 1 inline).
+Entrega: .Rmd + .html en carpeta del curso.
+--- 
+class: middle
+
+¡Gracias!
+
+
+---
+class: center, middle
+
+# **Dudas o comentarios**
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDJwYnZ2aWQ3NHI1NHdzY215NmVxbnMydzk3YWV4emw1enhxbDNtdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x4K9PJFFHLQIPk3r0p/giphy.gif)
+
+---
+class: middle right
+background-image: url('portada.jpg')
+background-size: cover
+
+
+### Esta presentación fue realizada con el paquete  [Xaringan](https://slides.yihui.org/xaringan), diseñado para entorno  [R](https://www.r-project.org/) 
+
+
