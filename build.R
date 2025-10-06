@@ -1,6 +1,5 @@
-# build.R — publica todas las clases de slides_src/* en docs/slides/*
-# Sin mover nada a mano.
 
+# install.packages(c("fs","rmarkdown"), repos="https://cloud.r-project.org")
 library(fs)
 library(rmarkdown)
 
@@ -13,18 +12,28 @@ dir_create(out_root)
 clases <- dir_ls(src_root, type = "directory", recurse = FALSE)
 
 for (cl in clases) {
-  clase_name <- path_file(cl)                  # p.ej. "clase_1"
-  rmds <- dir_ls(cl, regexp = "\\.Rmd$", type = "file")
+  clase_name <- path_file(cl)                        # p.ej. "clase_1"
+  rmds <- dir_ls(cl, regexp = "\\.Rmd$", type = "file", recurse = TRUE)
   if (!length(rmds)) next
-  rmd <- rmds[1]                               # usa el primer .Rmd de la carpeta
+  rmd <- rmds[1]                                     # usa el primer .Rmd
   
   out_dir <- path(out_root, clase_name)
   dir_create(out_dir)
   
-  # Copia todos los assets que NO son Rmd al lado del HTML final
-  assets <- dir_ls(cl, type = "file", recurse = FALSE)
-  assets <- assets[!grepl("\\.Rmd$", assets, ignore.case = TRUE)]
-  if (length(assets)) file_copy(assets, path(out_dir, path_file(assets)), overwrite = TRUE)
+  # --- COPIA RECURSIVA DE TODO EXCEPTO .Rmd ---
+  paths <- dir_ls(cl, recurse = TRUE, type = "any")
+  paths <- paths[!grepl("\\.Rmd$", paths, ignore.case = TRUE)]
+  
+  for (p in paths) {
+    rel  <- path_rel(p, start = cl)                  # ruta relativa dentro de la clase
+    dest <- path(out_dir, rel)
+    if (dir_exists(p)) {
+      dir_create(dest)
+    } else {
+      dir_create(path_dir(dest))
+      file_copy(p, dest, overwrite = TRUE)
+    }
+  }
   
   message("Renderizando: ", rmd, "  -->  ", out_dir, "/index.html")
   render(
@@ -34,4 +43,5 @@ for (cl in clases) {
     envir       = new.env()
   )
 }
-message("OK. Revisa docs/slides/<clase>/index.html")
+
+message("OK. Revisa docs/slides/<clase>/index.html (con libs/ si aplica)")

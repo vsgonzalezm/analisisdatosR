@@ -23,20 +23,22 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 ## Calendario (10 sesiones × 3 h)
 
 
+
 | Sesión | Tema | Contenido | Material |
-|---|---|---|---|
-| 1 | Setup + R/RStudio | Proyecto, objetos básicos, importar  | [Slides](docs/slides/clase_1/index.html)|· [Script](exercises/clase_1.R) |
-| 2 | Tidyverse I | `dplyr`: select/filter/mutate/summarise/group_by | [Slides](slides/02-tidyverse.html)  |
-| 3 | Tidyverse II | `tidyr`: pivot_wider/longer; `readr`; `janitor` | [Slides](slides/03-tidyr.html)  |
-| 4 | Joins | Integración de múltiples fuentes (left/right/inner/full) | [Slides](slides/04-joins.html) |
-| 5 | Viz I | Gramática de gráficos; barras/líneas/boxplots | [Slides](slides/05-ggplot-basico.html)  |
-| 6 | Viz II | Facetas, escalas, temas; exportación | [Slides](slides/06-ggplot-avanzado.html)  |
-| 7 | Tablas y reportes | `gt`/`gtsummary`; R Markdown (reportes/slides) | [Slides](slides/07-reportes.html) |
-| 8 | Análisis aplicado | Descriptivos, correlaciones; briefing gráfico | [Slides](slides/08-analisis.html) |
-| 9 | Regresión básica | Lineal/logística (interpretación no causal) | [Slides](slides/09-modelos.html)|
-| 10 | Proyecto final | Integración: script + slides + visualizaciones | [Slides](slides/10-proyecto.html) |
+|---:|---|---|---|
+| 1 | Setup + R/RStudio | Proyecto, objetos básicos, importar | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_1/) · [Script](lectures/01_setup.R) |
+| 2 | Tidyverse I | `dplyr`: select / filter / mutate / summarise / group_by | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_2/) · [Script](lectures/02_tidyverse.R) |
+| 3 | Tidyverse II | `tidyr`: pivot_wider / pivot_longer; `readr`; `janitor` | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_3/) · [Script](lectures/03_tidyr.R) |
+| 4 | Joins | Integración de múltiples fuentes (left/right/inner/full) | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_4/) · [Script](lectures/04_joins.R) |
+| 5 | Viz I | Gramática de gráficos; barras/líneas/boxplots | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_5/) · [Script](lectures/05_ggplot_basico.R) |
+| 6 | Viz II | Facetas, escalas, temas; exportación | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_6/) · [Script](lectures/06_ggplot_avanzado.R) |
+| 7 | Tablas y reportes | `gt`, `gtsummary`; R Markdown / Quarto | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_7/) · [Script](lectures/07_reportes.R) |
+| 8 | Análisis aplicado | Descriptivos, correlaciones; briefing gráfico | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_8/) · [Script](lectures/08_analisis.R) |
+| 9 | Regresión básica | Lineal / logística (interpretación no causal) | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_modelos.R) |
+| 10 | Proyecto final | Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_proyecto.R) |
 
 ---
+
 
 ## Estructura del repositorio
 - `slides/` — presentaciones (xaringan )
