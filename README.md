@@ -1,6 +1,6 @@
 # Análisis de Datos con R para Ciencias Sociales — *analisisdatosR*
 
-![Portada del curso](images/portada.jpg)
+![Portada del curso](portada.jpg)
 
 Curso práctico de 30 horas para la **Licenciatura en Estudios Internacionales**. Integra programación básica en R con principios de investigación reproducible y trabajo con datos reales. 
 
@@ -25,7 +25,7 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 
 | Sesión | Tema | Contenido | Material |
 |---|---|---|---|
-| 1 | Setup + R/RStudio | Proyecto, objetos básicos, importar CSV/Excel/SPSS | [Slides](slides/clase_1.html)|
+| 1 | Setup + R/RStudio | Proyecto, objetos básicos, importar  | [Slides](docs/slides/clase_1/index.html)|· [Script](exercises/clase_1.R) |
 | 2 | Tidyverse I | `dplyr`: select/filter/mutate/summarise/group_by | [Slides](slides/02-tidyverse.html)  |
 | 3 | Tidyverse II | `tidyr`: pivot_wider/longer; `readr`; `janitor` | [Slides](slides/03-tidyr.html)  |
 | 4 | Joins | Integración de múltiples fuentes (left/right/inner/full) | [Slides](slides/04-joins.html) |
