@@ -58,10 +58,9 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 ---
 
 ## Bibliografía clave (acceso abierto)
-- Wickham, H., & Grolemund, G. (2017). **R for Data Science: Import, Tidy, Transform, Visualize,and Model Data.** O’Reilly Media. Disponible en: https://r4ds.had.co.nz/
-- Imai, K. (2017). **Quantitative Social Science: An Introduction** Princeton University Press. Dis￾ponible en: https://qss.princeton.press/
-- Wickham, H. (2016). **ggplot2: Elegant Graphics for Data Analysis.** Springer. Disponible en:https://ggplot2-book.org/
--
+- Wickham, H., & Grolemund, G. (2017). **R for Data Science: Import, Tidy, Transform, Visualize,and Model Data.** O’Reilly Media.[Disponible](https://r4ds.had.co.nz/) 
+- Imai, K. (2017). **Quantitative Social Science: An Introduction** Princeton University Press. [Disponible](https://qss.princeton.press/) 
+- Wickham, H. (2016). **ggplot2: Elegant Graphics for Data Analysis.** Springer.[Disponible](https://ggplot2-book.org/). 
 
 
 
