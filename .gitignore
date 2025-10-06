@@ -1,0 +1,8 @@
+.Rproj.user/
+.Rhistory
+.RData
+.DS_Store
+Thumbs.db
+
+# Si NO quieres subir los .Rmd al repo público:
+slides_src/
