@@ -1,6 +1,6 @@
 # Análisis de Datos con R para Ciencias Sociales — *analisisdatosR*
 
-![Portada del curso](slides/images/portada.jpg)
+![Portada del curso](docs/images/portada.jpg)
 
 Curso práctico de 30 horas para la **Licenciatura en Estudios Internacionales**. Integra programación básica en R con principios de investigación reproducible y trabajo con datos reales. 
 
