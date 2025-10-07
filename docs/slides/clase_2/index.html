@@ -4109,7 +4109,7 @@ valentina.gonzalez.mad@usach.cl
 .title-where[
 **Analisis de datos con R studio&lt;br&gt;**
 Universidad de Santiago &lt;br&gt;
-06-10-2025
+07-10-2025
 ]
 
 &lt;style type=&quot;text/css&quot;&gt;
@@ -4177,8 +4177,34 @@ top:1em;right:1em;
 </div>
 
 
+
+--- 
+Recoerdar cosas vistas. 
+
+
+
+
+-- operadores 
+
+aritmeticos 
+
+
+relacionales 
+
+
+logicos 
+
+
+--- 
+# COMENZAR POR PROYECTO 
+https://bookdown.org/daniel_dauber_io/r4np_book/starting-your-r-projects.html
+
+---  
+# usar markdown https://bookdown.org/daniel_dauber_io/r4np_book/starting-your-r-projects.html#r-markdown-and-r-notebooks
+
 ---
 class:middle
+
 # Indice 
 - profundizar en dplyr (select, filter, mutate, arrange, summarise, group_by).
 
@@ -4187,6 +4213,7 @@ class:middle
 - práctica
 ---
 class:middle
+
 # Setup del proyecto
 
 Abre el .Rproj de la clase.
@@ -4201,6 +4228,7 @@ getwd()
 here::here()
 dir.create(here::here(&quot;outputs&quot;), showWarnings = FALSE)
 ---
+
 class: middle
 
 # Cargar paquetes
@@ -4227,6 +4255,8 @@ UNpop &lt;- readr::read_csv(
 dplyr::glimpse(UNpop)
 
 ---
+
+#Data Wrangling with dplyr
 class: middle
 
 ## dplyr · select() y filter()
@@ -4271,6 +4301,12 @@ UNpop %&gt;%
 Para grupos: anteponer group_by(grupo) y luego summarise().
 
 ---
+#counting
+
+---
+#Pipes. 
+
+---
 class: middle
 
 # Gráfico rápido
@@ -4281,9 +4317,10 @@ p &lt;- ggplot(UNpop, aes(x = year, y = world.pop)) +
     x = &quot;Año&quot;, y = &quot;Población (millones)&quot;
   ) +
   theme_minimal()
-
 p
 
+
+#Handling Missing Data in R
 ---
 class: middle
 
@@ -4329,7 +4366,7 @@ class: middle
 ---
 title: &quot;Mini-informe exploratorio&quot;
 author: &quot;Nombre Apellido&quot;
-date: &quot;06 octubre 2025&quot;
+date: &quot;07 octubre 2025&quot;
 output: html_document
 ---
 
