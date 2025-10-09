@@ -1,5 +1,5 @@
 ########################################################################
-# Clase 1 — Análisis de datos con R
+# Clase 2 — Análisis de datos con R
 # Profesora: Valentina González Madariaga
 # Fecha: 2025-10-08
 # Objetivo: Dplyr básico e Introducción R Markdown
