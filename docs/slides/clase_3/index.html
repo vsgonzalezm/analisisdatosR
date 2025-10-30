@@ -4108,7 +4108,7 @@ valentina.gonzalez.mad@usach.cl
 .title-where[
 **Analisis de datos con R studio&lt;br&gt;**
 Universidad de Santiago &lt;br&gt;
-21-10-2025
+29-10-2025
 ]
 
 &lt;style type=&quot;text/css&quot;&gt;
@@ -4211,20 +4211,9 @@ class: middle
 ## Dataset: QSS · social
 
 ``` r
-url_social &lt;- &quot;https://raw.githubusercontent.com/kosukeimai/qss/master/CAUSALITY/social.csv&quot;
-social &lt;- readr::read_csv(url_social)
-dplyr::glimpse(social)
-```
-
-```
-## Rows: 305,866
-## Columns: 6
-## $ sex         &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;female&quot;, &quot;fema…
-## $ yearofbirth &lt;dbl&gt; 1941, 1947, 1951, 1950, 1982, 1981, 1959,…
-## $ primary2004 &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1,…
-## $ messages    &lt;chr&gt; &quot;Civic Duty&quot;, &quot;Civic Duty&quot;, &quot;Hawthorne&quot;, …
-## $ primary2006 &lt;dbl&gt; 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0,…
-## $ hhsize      &lt;dbl&gt; 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 1, 2, 2, 1,…
+#url_social &lt;- &quot;https://raw.githubusercontent.com/kosukeimai/qss/master/CAUSALITY/social.csv&quot;
+#social &lt;- readr::read_csv(url_social)
+#dplyr::glimpse(social)
 ```
 
 ---
@@ -4273,20 +4262,20 @@ class: middle
 
 ``` r
 # install.packages(&quot;writexl&quot;)
-writexl::write_xlsx(social, here::here(&quot;data&quot;,&quot;social.xlsx&quot;))
+#writexl::write_xlsx(social, here::here(&quot;data&quot;,&quot;social.xlsx&quot;))
 ```
 
 **Stata:**  
 
 ``` r
 # install.packages(&quot;haven&quot;)
-haven::write_dta(social, here::here(&quot;data&quot;,&quot;social.dta&quot;))
+#haven::write_dta(social, here::here(&quot;data&quot;,&quot;social.dta&quot;))
 ```
 
 **SPSS:**  
 
 ``` r
-haven::write_sav(social, here::here(&quot;data&quot;,&quot;social.sav&quot;))
+#haven::write_sav(social, here::here(&quot;data&quot;,&quot;social.sav&quot;))
 ```
 ---
 class: middle
