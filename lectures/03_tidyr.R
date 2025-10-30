@@ -12,7 +12,7 @@
 
 
 ##############################
-# 0) Proyecto y rutas (lámina: Proyecto y rutas)
+# 0) Proyecto y rutas 
 ##############################
 # Abre SIEMPRE el .Rproj del curso antes de correr.
 # Crea carpetas base si no existen.
@@ -25,7 +25,7 @@ dir.create(here::here("data"),    showWarnings = FALSE)
 dir.create(here::here("outputs"), showWarnings = FALSE)
 
 ##############################
-# 1) Paquetes (lámina: Paquetes sugeridos)
+# 1) Paquetes 
 ##############################
 # install.packages(c("readr","dplyr","tidyr","ggplot2","janitor","readxl","haven","writexl"))
 
