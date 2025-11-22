@@ -31,11 +31,11 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 | 3 | Tidyverse II | `tidyr`: pivot_wider / pivot_longer; `readr`; `janitor` | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_3/) · [Script](lectures/03_tidyr.R) |
 | 4 | Joins | Integración de múltiples fuentes (left/right/inner/full) | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_4/) · [Script](lectures/04_joins.R) |
 | 5 | Viz I | Gramática de gráficos; barras/líneas/boxplots | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_5/) · [Script](lectures/05_ggplot_basico.R) |
-| 6 | Viz II | Facetas, escalas, temas; exportación | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_6/) · [Script](lectures/06_ggplot_avanzado.R) |
-| 7 | Tablas y reportes | `gt`, `gtsummary`; R Markdown / Quarto | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_7/) · [Script](lectures/07_reportes.R) |
-| 8 | Análisis aplicado | Descriptivos, correlaciones; briefing gráfico | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_8/) · [Script](lectures/08_analisis.R) |
-| 9 | Regresión básica | Lineal / logística (interpretación no causal) | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_modelos.R) |
-| 10 | Proyecto final | Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_proyecto.R) |
+| 6 | Análisis aplicado | ggplot2 y análisis | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_6/) · [Script](lectures/06_ggplot_lm.R) |
+| 7 | Análisis aplicado II | Correlación y Regresión lineal  | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_7/) · [Script](lectures/07_lm.R) |
+| 8 | Análisis aplicado III | Introducción Regresión logística| [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_8/) · [Script](lectures/08_glm.R) |
+| 9 | Cápsula  | Regresiones y modelos | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_modelos.R) |
+| 10 | Comunicar Resultados |Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_proyecto.R) |
 
 ---
 
