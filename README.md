@@ -34,25 +34,24 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 | 6 | Análisis aplicado | ggplot2 y análisis | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_6/) · [Script](lectures/06_ggplot_lm.R) |
 | 7 | Análisis aplicado II | Correlación y Regresión lineal  | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_7/) · [Script](lectures/07_lm.R) |
 | 8 | Análisis aplicado III | Introducción Regresión logística| [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_8/) · [Script](lectures/08_glm.R) |
-| 9 | Cápsula  | Regresiones y modelos | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_modelos.R) |
+| 9 |  Análisis aplicado IV | Regresiones y elección modelos | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_elec.R) |
 | 10 | Comunicar Resultados |Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_proyecto.R) |
 
 ---
 
 
 ## Estructura del repositorio
-- `slides/` — presentaciones (xaringan )
-- `lectures/` — scripts/notebooks por clase
-- `exercises/` — ejercicios 
-- `data/` — `raw/` y `processed/`
+- `slides/` — presentaciones (xaringan)
+- `lectures/` — scripts por clase
+- `data/` — bases utilizadas
 - `images/` — gráficos e ilustraciones
 
 ---
 
 ## Evaluación
-- Evaluación 1 (Módulo 1) — 25%  
-- Evaluación 2 (Módulo 2) — 25%  
-- Evaluación 3 (Módulo 3) — 20%  
+- Evaluación 1  — 25%  
+- Evaluación 2  — 25%  
+- Evaluación 3 (actividad en clase) — 20%  
 - Evaluación 4 (Tarea Final) — 30%  
 
 ---
