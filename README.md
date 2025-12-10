@@ -35,7 +35,7 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 | 7 | Análisis aplicado II | Correlación y Regresión lineal  | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_7/) · [Script](lectures/07_lm.R) |
 | 8 | Análisis aplicado III | Introducción Regresión logística| [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_8/) · [Script](lectures/08_glm.R) |
 | 9 |  Análisis aplicado IV | Regresiones y elección modelos | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_9/) · [Script](lectures/09_elec.R) |
-| 10 | Comunicar Resultados |Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_proyecto.R) |
+| 10 | Comunicar Resultados |Integración: script + slides + visualizaciones | [Slides](https://vsgonzalezm.github.io/analisisdatosR/slides/clase_10/) · [Script](lectures/10_repro.R) |
 
 ---
 
@@ -49,10 +49,9 @@ Desarrollar competencias fundamentales para explorar, analizar y presentar datos
 ---
 
 ## Evaluación
-- Evaluación 1  — 25%  
-- Evaluación 2  — 25%  
-- Evaluación 3 (actividad en clase) — 20%  
-- Evaluación 4 (Tarea Final) — 30%  
+- Evaluación 1  — 30%  
+- Evaluación 2  — 30%  
+- Evaluación 4 (Tarea Final) — 40%  
 
 ---
 
